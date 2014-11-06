@@ -10,7 +10,7 @@
 #include<stdlib.h>
 int main()
 {
-	printf("hello");
+	printf("hello my first prog h boss ");
 	return 1;
 }
 
