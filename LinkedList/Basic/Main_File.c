@@ -12,7 +12,7 @@
 
 int main()
 {
-	printf("mar gyii me\n");
+	printf("mar gyii hhh me\n");
 	test();
 	return 1;
 }
