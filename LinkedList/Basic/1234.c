@@ -17,7 +17,14 @@ void createLinkedList()
 {
 	start=(struct node *) malloc(sizeof( struct node ) );
 	start->data=7;
-	printf("fuck u");
+	printf("fuhhhhhhhhck u");
+}
+
+void hu()
+{
+	int op;
+	printf("Enter options : ");
+	scanf("%d",&op);
 }
 int test()
 {

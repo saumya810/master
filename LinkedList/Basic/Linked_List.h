@@ -1,3 +1,4 @@
+
 /*
  * Linked_List.h
  *
@@ -14,6 +15,7 @@ struct node {
 };
 int test();
 void createLinkedList();
+void hu();
 struct node *start;
 
 #endif /* LINKED_LIST_H_ */
