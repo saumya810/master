@@ -8,7 +8,12 @@
 #ifndef LINKED_LIST_H_
 #define LINKED_LIST_H_
 
-
+struct node {
+	int data;
+	struct node *next;
+};
 int test();
+void createLinkedList();
+struct node *start;
 
 #endif /* LINKED_LIST_H_ */
