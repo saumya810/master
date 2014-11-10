@@ -8,10 +8,13 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "basic.h"
 
-
+void options();
 int main()
 {
-	printf("hello");
+	int y;
+	setbuf(stdout, NULL);
+	options();
 	return 1;
 }
