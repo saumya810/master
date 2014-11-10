@@ -13,8 +13,10 @@
 
 int main()
 {
-	printf("mar hhgyii hhhhhhh me\n");
-	test();
+	int g;
+	printf("ma hhjhgyii hhhhhhhhh me\n");
+	scanf("%d",&g);
+	hu();
 	createLinkedList();
     printf("  %d  ",start->data);
 	return 1;
