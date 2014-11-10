@@ -8,6 +8,11 @@
 #ifndef BASIC_H_
 #define BASIC_H_
 
+struct node {
+	int data;
+	struct node *next;
+};
+struct node *start;
 void options();
 
 
