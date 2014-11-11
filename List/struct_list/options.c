@@ -10,13 +10,14 @@
 #include "basic.h"
 void insert();
 void display();
+void append();
 void options()
 {
 	int op;
 	op=1;
-	while(op!=3)
+	while(op!=4)
 			{
-	          printf("\nSelect The Options :- \n\n1) Insert\n2)  Display\n3)  Exit");
+	          printf("\nSelect The Options :- \n\n1) Insert\n2)  Display\n3)  Append\n4)  Exit");
 	           scanf("%d",&op);
 
 		       if(op==1)
@@ -30,6 +31,12 @@ void options()
 						display();
 
 					}
+		        if(op==3)
+		        					{
+		        						printf("Append\n\n\n\n");
+		        						append();
+
+		        					}
 		     }
 
 }
@@ -69,4 +76,23 @@ void display()
 		printf("------> %d ",temp->data);
 		temp=temp->next;
 	}
+}
+
+void append()
+{
+	    struct node *temp;
+	    int val;
+		temp=start;
+		while(temp->next!=NULL)
+		{
+			temp=temp->next;
+		}
+		temp->next=(struct node *)malloc(sizeof(struct node));
+		temp=temp->next;
+		printf("\n Enter the element :-  ");
+		scanf("%d",&val);
+		temp->data=val;
+		temp->next=NULL;
+
+
 }
