@@ -147,7 +147,6 @@ void reverse(struct node *point)
 void swap_alternate_nodes(struct node **pointer)
 {
 	struct node *temp,*p,*s;
-	struct node **q;
 	temp=*pointer;
 	s=temp->next->next;
 	p=temp->next;
