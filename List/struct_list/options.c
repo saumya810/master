@@ -8,16 +8,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "basic.h"
+
 void insert();
 void display();
 void append();
+void reverse();
+void reverse(struct node *point);
+
+
 void options()
 {
 	int op;
 	op=1;
-	while(op!=4)
+	while(op!=5)
 			{
-	          printf("\nSelect The Options :- \n\n1) Insert\n2)  Display\n3)  Append\n4)  Exit");
+	          printf("\nSelect The  Options  :- \n\n1) Insert\n2)  Display\n3)  Append\n4)  reverse\n5)  Exit");
 	           scanf("%d",&op);
 
 		       if(op==1)
@@ -37,6 +42,13 @@ void options()
 		        						append();
 
 		        					}
+		        if(op==4)
+		        					{
+		        						printf("reverse\n\n\n\n");
+		        						reverse(start);
+
+		        					}
+
 		     }
 
 }
@@ -89,10 +101,40 @@ void append()
 		}
 		temp->next=(struct node *)malloc(sizeof(struct node));
 		temp=temp->next;
-		printf("\n Enter the element :-  ");
+		printf("\n  Enter the element :-  ");
 		scanf("%d",&val);
 		temp->data=val;
 		temp->next=NULL;
+
+
+}
+
+void reverse(struct node *point)
+{
+	struct node *temp,*p,*q;
+	if(point->next==NULL)   //odd number of items as end item is left and (point) is not null
+	{
+		start=point;
+		return;
+	}
+
+	temp=point;
+	p=point->next;
+	q=point->next->next;
+	p->next=temp;
+    if(point==start)
+    {
+    	point->next=NULL;
+    }
+	if(q!=NULL)
+	{
+		reverse(q); // on back tracking making link for alternate left out nodes
+		q->next=p;
+	}
+	else
+	{
+		start=p;
+	}
 
 
 }
