@@ -14,15 +14,15 @@ void display();
 void append();
 void reverse();
 void reverse(struct node *point);
-
+void swap_alternate_nodes(struct node **pointer);
 
 void options()
 {
 	int op;
 	op=1;
-	while(op!=5)
+	while(op!=6)
 			{
-	          printf("\nSelect The  Options  :- \n\n1) Insert\n2)  Display\n3)  Append\n4)  reverse\n5)  Exit");
+	          printf("\nSelect The  Options  :- \n\n1) Insert\n2)  Display\n3)  Append\n4)  reverse\n5)  Swap_alternate_nodes\n6)  Exit");
 	           scanf("%d",&op);
 
 		       if(op==1)
@@ -46,6 +46,12 @@ void options()
 		        					{
 		        						printf("reverse\n\n\n\n");
 		        						reverse(start);
+
+		        					}
+		        if(op==5)
+		        					{
+		        						printf("swap_alternate_nodes\n\n\n\n");
+		        						swap_alternate_nodes(&start);
 
 		        					}
 
@@ -135,6 +141,24 @@ void reverse(struct node *point)
 	{
 		start=p;
 	}
+
+}
+
+void swap_alternate_nodes(struct node **pointer)
+{
+	struct node *temp,*p,*s;
+	struct node **q;
+	temp=*pointer;
+	s=temp->next->next;
+	p=temp->next;
+	*pointer=p;
+	p->next=temp;
+    temp->next=s;
+    if(s!=NULL&&s->next!=NULL)
+    {
+    	swap_alternate_nodes(&temp->next);
+    }
+
 
 
 }
