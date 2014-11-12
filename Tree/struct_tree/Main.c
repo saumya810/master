@@ -7,6 +7,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "basic.h"
 
 int main()
 {
@@ -15,5 +16,6 @@ int main()
 	printf("hello");
 	scanf("%d",&i);
 	printf("\n i: - %d ",i);
+	option();
 	return 1;
 }

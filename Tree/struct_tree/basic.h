@@ -14,7 +14,8 @@ struct node {
 	struct node *right;
 
 };
-struct node *start;
+struct node *root;
 
+void option();
 
 #endif /* BASIC_H_ */
