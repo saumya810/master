@@ -13,7 +13,7 @@
 void options();
 int main()
 {
-	int y;
+
 	setbuf(stdout, NULL);
 	options();
 	return 1;
