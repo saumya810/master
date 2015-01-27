@@ -176,3 +176,9 @@ void printpopparents(struct node *temp)
 	}
 
 }
+
+
+void InorderWidoutRecursion(struct node *root)
+{
+
+}
