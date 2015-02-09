@@ -7,7 +7,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <basic.h>
+#include "basic.h"
 
 int * Insertion(int * res);
 void print(int * res);
@@ -16,20 +16,20 @@ void Merge();
 void options()
 {
 		int option,i;
-		int arr[8]={1,8,3,7,2,5,4,6},res[8];
-		printf("Choose the options :\n1. Insertions Sort \n2. Merge Sort");
+		int arr[8]={1,8,3,7,2,5,4,6},res[8],*result;
+		printf("Choose the options :\n1. Insertions Sort \n2. Merge Sort\n3. Exit");
 		scanf("%d",&option);
 		if(option==1)
 		{
 			for(i=0;i<8;i++)
 				res[i]=arr[i];
-			res=Insertion(res);
-			print(res);
+			result=Insertion(res);
+			print(result);
 		}
 
-		else
+		else if(option==3)
 		{
-			Merge_Sort();
+			exit(1);
 		}
 
 }
@@ -63,7 +63,7 @@ void Merge()
 void print(int * res)
 {
 	int i;
-	for(i=0;i<7;i++)
+	for(i=0;i<8;i++)
 	{
 		printf(" %d ",res[i]);
 	}

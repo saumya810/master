@@ -8,7 +8,6 @@
 #ifndef BASIC_H_
 #define BASIC_H_
 
-
 void options();
 
 #endif /* BASIC_H_ */
