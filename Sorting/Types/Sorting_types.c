@@ -13,12 +13,17 @@ int * Insertion(int * res);
 void print(int * res);
 void Merge_Sort(int *arr,int start,int end);
 void Merge(int *arr,int start,int end,int mid);
+void Max_Heapify(int *arr,int start,int end);
+void Make_Heap(int *arr,int end);
+void Heap_Sort(int *arr,int end);
+int left_child(int i);
+int right_child(int i);
 
 void options()
 {
 		int option,i;
-		int arr[8]={1,8,3,7,2,5,4,6},res[8],*result;
-		printf("Choose the options :\n1. Insertions Sort \n2. Merge Sort\n3. Exit");
+		int arr[8]={10,80,13,17,2,55,14,6},res[8],*result;
+		printf("Choose the options :\n1. Insertions Sort \n2. Merge Sort\n3. Exit\n4. Heap");
 		scanf("%d",&option);
 		if(option==1)
 		{
@@ -38,10 +43,17 @@ void options()
 
 		else if(option==3)
 		{
-			for(i=0;i<8;i++)
-				res[i]=arr[i];
 
-			//exit(1);
+
+			exit(1);
+		}
+
+		else if(option==4)
+		{
+			for(i=0;i<8;i++)
+			  res[i]=arr[i];
+			Heap_Sort(res,7);
+			print(res);
 		}
 
 }
@@ -121,6 +133,72 @@ void Merge_Sort(int *arr,int start,int end)
 				}
 			}
 }
+
+    int left_child(int i)
+    {
+    	if(i==0)
+    		return 1;
+    	else
+    		return 2*i+1;
+    }
+
+    int right_child(int i)
+    {
+    	if(i==0)
+    		return 2;
+    	else
+    		return (2*i+2);
+    }
+
+
+	void Max_Heapify(int *arr,int pivot,int end)
+	{
+		int max,temp,check;
+		max=pivot;
+		if(left_child(pivot) <= end && arr[left_child(pivot)]>arr[max])
+		{
+			max=left_child(pivot);
+		}
+		if(right_child(pivot) <= end && arr[right_child(pivot)] > arr[max])
+		{
+			max=right_child(pivot);
+		}
+		if(max != pivot)
+		{
+			temp=arr[pivot];
+			arr[pivot]=arr[max];
+			arr[max]=temp;
+			check=arr[max];
+			Max_Heapify(arr,max,end);
+		}
+	}
+
+	void Make_Heap(int *arr,int end)
+	{
+		int n,i;
+		n=(end+1)/2;
+		for(i=n-1;i>=0;i--)
+		{
+			Max_Heapify(arr,i,end);
+		}
+		print(arr);
+
+	}
+
+	void Heap_Sort(int *arr,int end)
+	{
+		int n,temp;
+		Make_Heap(arr,end);
+		for(n=end;n>=1;n--)
+		{
+			temp=arr[0];
+			arr[0]=arr[n];
+			arr[n]=temp;
+			Max_Heapify(arr,0,n-1);
+
+		}
+	}
+
 
 void print(int * res)
 {
