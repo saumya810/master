@@ -19,7 +19,7 @@ public class First {
 			count[i]=sum+count[i];
 			sum=count[i];
 		}
-		
+//		
 		int [] out = new int [7];
 		for(int i=0;i<arr.length;i++)
 		{
