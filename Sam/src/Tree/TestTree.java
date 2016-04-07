@@ -28,6 +28,18 @@ public class TestTree {
 		t1.Inorder();
 		System.out.println("postorder traversal without recursion");
 		t1.Postorder();
+		Thread_tree_test t11 = new Thread_tree_test();
+		t11.insert(8);
+		t11.insert(6);
+		t11.insert(12);
+		t11.insert(4);
+		t11.insert(3);
+		t11.insert(7);
+		t11.insert(11);
+		t11.insert(16);
+		t11.insert(5);
+		System.out.println("Inorder traversal for threaded tree");
+		t11.inorder();
 		
 	}
 	
