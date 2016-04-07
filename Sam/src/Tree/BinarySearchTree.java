@@ -1,5 +1,7 @@
 package Tree;
-import java.io.*;
+//import java.util.Queue;
+//import java.util.LinkedList;
+import java.util.*;
 
 public class BinarySearchTree {
 
@@ -79,6 +81,92 @@ public class BinarySearchTree {
 			  System.out.println(node.value);
 		  }
 	}
+	  
+	  public void Display_levelwise()
+	  {
+		  Queue <Node> queue = new LinkedList <Node> ();
+		  queue.add(this.root);
+		  while(!queue.isEmpty())
+		  {
+			  Node temp = queue.poll();
+			  System.out.println(temp.value);
+			  if(temp.left!=null)
+				  queue.add(temp.left);
+			  if(temp.right!=null)
+				  queue.add(temp.right);
+			  
+		  }
+	  }
+	  
+	  
+	  public void Preorder()
+	  {
+		  Stack<Node> s1=new Stack<Node>();
+		  s1.push(this.root);
+		  while(!s1.isEmpty())
+		  {
+			  Node temp = s1.pop();
+			  System.out.println(temp.value);
+			  if(temp.right!=null)
+				  s1.push(temp.right);
+			  if(temp.left!=null)
+				  s1.push(temp.left);
+			  
+		  }
+		  
+	  }
+	  
+	  public void Inorder()
+	  {
+		  Stack<Node> s1=new Stack<Node>();
+		  Node temp = this.root;
+		  while(!s1.isEmpty()||temp!=null)
+		  {
+			  while(temp!=null)
+			  {
+				  s1.push(temp);
+				  temp=temp.left;
+			  }
+			  temp=s1.pop();
+			  System.out.println(temp.value);
+			  temp=temp.right;
+			  
+		  }
+	  }
+	  
+	  public void Postorder()
+	  {
+		  Stack<Node> s1=new Stack<Node>();
+		  Node temp=this.root;
+		  Node prev=new Node(100);
+		  s1.push(temp);
+		  while(!s1.isEmpty())
+		  {
+			  temp=s1.peek();
+			  if(!(prev==temp.left || prev==temp.right))
+			  {
+				  if(temp.right!=null)
+					  s1.push(temp.right);
+				  if(temp.left!=null)
+					  s1.push(temp.left);
+				  if(temp.right==null && temp.left==null)
+				  {
+					  temp=s1.pop();
+					  System.out.println(temp.value);
+					  prev=temp;
+				  }
+			  }
+			  
+			  else
+			  {
+				  temp=s1.pop();
+				  System.out.println(temp.value);
+				  prev=temp;
+				  
+			  }
+			  
+		  }
+	  }
 	  
 	  
 	  
