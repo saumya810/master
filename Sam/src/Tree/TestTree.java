@@ -4,7 +4,7 @@ public class TestTree {
 	
 	public static void main(String[] args){
 	
-		BinarySearchTree t1 = new BinarySearchTree();
+	/*	BinarySearchTree t1 = new BinarySearchTree();
 		t1.Insert(8);
 		t1.Insert(6);
 		t1.Insert(12);
@@ -40,6 +40,23 @@ public class TestTree {
 		t11.insert(5);
 		System.out.println("Inorder traversal for threaded tree");
 		t11.inorder();
+	*/
+		AVL_tree at = new AVL_tree();
+		at.root=at.insert(at.root,100);
+		at.root=at.insert(at.root,8);
+		at.root=at.insert(at.root,120);
+		at.root=at.insert(at.root,5);
+		at.root=at.insert(at.root,90);
+		at.root=at.insert(at.root,110);
+		at.root=at.insert(at.root,130);
+		at.root=at.insert(at.root,85);
+		at.root=at.insert(at.root,95);
+		at.preorder(at.root);
+		at.root=at.insert(at.root,84);
+		at.preorder(at.root);
+		
+		
+				
 		
 	}
 	
