@@ -15,6 +15,7 @@ class Vertex
 {
 	String name;
 	String color;
+	Vertex parent;
 	Neighbours next;
 	
 	Vertex(String name, Neighbours next)
@@ -22,6 +23,7 @@ class Vertex
 		this.name=name;
 		this.next=next;
 		this.color="white";
+		this.parent=null;
 	}
 }
 

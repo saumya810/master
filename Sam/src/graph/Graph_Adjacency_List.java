@@ -68,14 +68,17 @@ public class Graph_Adjacency_List {
 		}
 	}
 	
-	public static void main(String[] args)throws Exception
+	/*public static void main(String[] args)throws Exception
 	{
 		Graph_Adjacency_List g1=new Graph_Adjacency_List();
 		g1.inputValues();
 		g1.print();
+		BFS_and_DFS bfs =new BFS_and_DFS();
+		//bfs.BFS(g1.graph1, g1.graph1.get(0));
+		bfs.DFS(g1.graph1);
 		
 		
 	}
-	
+	*/
 	
 }
