@@ -3,33 +3,66 @@ package graph;
 import java.util.* ;
 import java.io.* ;
 
-class Node{
+class Node implements Comparable <Node>{
 	int data;
 	Node parent;
 	int rank;
+	int key;
+	
+	public int compareTo(Node other)
+	{
+		if(this.equals(other))
+			return 0;
+		else if(this.key>other.key)
+			return 1;
+		else
+			return -1;
+	}
 	
 	public Node(int data)
 	{
 		this.data=data;
 		this.parent=null;
+		this.key=100;
 	}
 }
- class Edge{
+ class Edge {
 
 	 Node source;
 	 Node destination;
 	 int weight;
 	 
+/*	 @Override
+	    public int compare(Edge e1, Edge e2) {
+	        if(e1.weight < e2.weight){
+	            return 1;
+	        } else {
+	            return -1;
+	        }
+	    }
+*/	
+	 
+	 
 }
-public class Convertor_to_Edge_list {
-	ArrayList <Vertex> graph1 = new ArrayList <Vertex> ();
+public class Convertor_to_Edge_list implements Comparator <Edge> {
 	ArrayList <Node> N=new ArrayList <Node>();
 	ArrayList <Edge> E= new ArrayList <Edge>();
 	
 	
-	public void print_edge()
+	public int compare(Edge e1,Edge e2)
 	{
-		for(Edge e1 :this.E)
+		if(e1.weight>=e2.weight)
+		{
+			return 1;
+		}
+		else
+			return -1;
+	}
+	
+	
+	public void print_edge(ArrayList <Edge> E)
+	{
+		for(Edge e1 :E)
 		{
 			System.out.println("Source  :   "+e1.source.data+ "  Destination  :  "+e1.destination.data+"  Weight  :  "+e1.weight);
 		}
@@ -92,7 +125,12 @@ public class Convertor_to_Edge_list {
 		//bfs.DFS(g1.graph1);
 		Convertor_to_Edge_list c=new Convertor_to_Edge_list();
 		c.CreateNodeAndEdge(g1);
-		c.print_edge();
+		c.print_edge(c.E);
+		//Collections.sort(c.E,c);
+		//c.print_edge(c.E);
+		SpanningTree t1=new SpanningTree();
+		//t1.Kruskal(c);
+		t1.Prim(c,c.N.get(0));
 		
 		
 	}
