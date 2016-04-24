@@ -1,7 +1,6 @@
 package graph;
 
-import java.util.Collections;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class SpanningTree {
 	
@@ -28,46 +27,46 @@ public class SpanningTree {
 	
 	public void Prim(Convertor_to_Edge_list c,Node b)
 	{
-		PriorityQueue <Node> pq = new PriorityQueue <Node>();
+		PriorityQueue pq = new PriorityQueue ();
 		for(Node n1:c.N)
 		{
 			n1.parent=null;
 			if(!n1.equals(b))
 			{
 				n1.key=100;
-				pq.add(n1);
+				pq.insert(pq.Q, n1);
 			}
 		}
 		
 		Node n=b;
-		while(!pq.isEmpty())
+		while(!pq.Q.isEmpty())
 		{
 			for(Edge e:c.E)
 			{
 				if(e.source==n)
 				{
-					if(pq.contains(e.destination))
+					Node node1=pq.get_node_by_data(pq.Q, e.destination.data);
+					if(node1!=null)
 					{
 						if(e.weight<e.destination.key)
 							{
-							System.out.println(" changing key  source "+e.source.data+ " Destination "+e.destination.data);
+							//System.out.println(" changing key  source "+e.source.data+ " Destination "+e.destination.data);
 							e.destination.key=e.weight;
 							e.destination.parent=n;
-							
-							
-							
+							pq.decrese_key(pq.Q, node1);
 							}
 					}
 				}
 			}
 			
-			for(Node n11 : c.N)
-			{
-				System.out.println("Vertex ----- "+n11.data+ " key ----"+n11.key);
-			}
-			n=pq.remove();
-			
-			System.out.println(" Source  "+ "Destination "+ n.data+ " key "+n.key);
+			//for(Node n11 : c.N)
+			//{
+				//System.out.println("Vertex ----- "+n11.data+ " key ----"+n11.key);
+			//}
+			n=pq.remove(pq.Q);
+			//for(Node n111:pq.Q)
+				//System.out.println(" Node in Queu" + n111.data);
+			System.out.println(" Source  "+  n.parent.data + "--------   Destination "+ n.data+ " key "+n.key);
 			
 			
 		}
