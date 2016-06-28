@@ -34,6 +34,8 @@ public class paranthesischeck {
 		
 		return counter;
 	}
+	//main removed 
+	
 	public static void main(String arg[])throws Exception
 	{
 		BufferedReader br= new BufferedReader( new InputStreamReader(System.in));
