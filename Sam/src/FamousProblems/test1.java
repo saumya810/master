@@ -3,7 +3,7 @@ import java.util.*;
 import java.lang.*;
 import java.io.*;
 import java.math.*;
-
+//bank bazaar first question
 public class test1 {
 
 

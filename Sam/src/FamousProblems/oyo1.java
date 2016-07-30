@@ -3,7 +3,7 @@ package FamousProblems;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.lang.*;
-
+//oyo interview student prob
 public class oyo1 {
 
 	static void findpair(int [] arr, int [] num,int n)

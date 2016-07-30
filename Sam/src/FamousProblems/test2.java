@@ -1,7 +1,7 @@
 package FamousProblems;
 import java.util.Arrays;
 import java.util.*;
-
+///bank bazaar second question
 public class test2 {
 
 	
