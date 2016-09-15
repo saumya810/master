@@ -3,22 +3,24 @@ package FamousProblems;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
+
+class Node {
+	int data;
+	Node left;
+	Node right;
+	public Node(int n)
+	{
+		this.data=n;
+		this.left=null;
+		this.right=null;
+	}
+}
 public class printNodesWithKdistance {
 
 	Node root=null;
 	int k=0;
 	
-	class Node {
-		int data;
-		Node left;
-		Node right;
-		public Node(int n)
-		{
-			this.data=n;
-			this.left=null;
-			this.right=null;
-		}
-	}
+	
 	
 	Node search(int data)
 	{

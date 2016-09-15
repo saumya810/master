@@ -4,20 +4,20 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 
-class Node{
-	int num;
-	Node next;
-	
-	public Node(int num)
-	{
-		this.num=num;
-		this.next=null;
-	}
-}
+
 
 public class oyo2 {
 
-	
+	class Node{
+		int num;
+		Node next;
+		
+		public Node(int num)
+		{
+			this.num=num;
+			this.next=null;
+		}
+	}
 	public static void main(String arg [])throws Exception
 	{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
