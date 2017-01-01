@@ -15,7 +15,7 @@ public class allPermutationOfString {
 			 return true;}
 		
 	}
-	
+	//test
 	public void printStack()
 	{
 		for(int i=0;i<s.size();i++)

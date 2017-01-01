@@ -23,7 +23,8 @@ public class oyo2 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String line = br.readLine();
         int N = Integer.parseInt(line);
-        Node dummy=new Node(0);
+        oyo2 a=new oyo2();
+        Node dummy=new Node();
         Node start=null;
         Node node=dummy;
         for(int i=0;i<N;i++)
