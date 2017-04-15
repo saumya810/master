@@ -74,6 +74,30 @@ int sum=0;
 			return B[i][j][1];
 		
 	}
+	int Max_value(int i ,int j,int []B, int [][]A)
+	{
+		if(i==j)
+		{
+			A[i][j]= B[i];
+			return  B[i];
+		}
+		if(i>j)
+			return 0;
+		if(i<0||j>=A.length)
+			return 0;
+		if(i>=A.length||j<0)
+			return 0;
+
+		if(A[i][j]!=0)
+			return A[i][j];
+		int max1= Math.max(B[i]+Max_value(i+1,j-1,B,A),B[i]+Max_value(i+2,j,B,A));
+		int max2= Math.max(B[j]+Max_value(i,j-2,B,A),B[j]+Max_value(i+1,j-1,B,A));
+		A[i][j] = Math.max(max1,max2);
+		System.out.println(" A B " + i + " "+j + " "+ A[i][j]);
+		return A[i][j];
+	}
+
+
 	public static void main(String[] args) throws IOException{
 		// TODO Auto-generated method stub
 
@@ -86,7 +110,9 @@ int sum=0;
 			A[i]=Integer.parseInt(s[i]);
 		Optimal_strategy_game_geeks4geeks ob1=new Optimal_strategy_game_geeks4geeks();
 		int [][][]B=new int [A.length][A.length][2];
+		int [][]B1=new int [A.length][A.length];
 		System.out.println(ob1.dynamic_strategy(A, B, 0, A.length-1,true));
+		System.out.println(ob1.Max_value(0,A.length-1,A,B1));
 		//ob1.dynamic_strategy(A, B, 0, A.length-1,true);
 		
 	}

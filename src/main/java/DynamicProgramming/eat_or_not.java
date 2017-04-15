@@ -1,6 +1,8 @@
+package DynamicProgramming;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
 
 public class eat_or_not {
     private static int getIntegerFromString(String numStr) {
@@ -33,10 +35,10 @@ public class eat_or_not {
                 c[i][j]=getIntegerFromString(s[j]);
             }
         }
-        System.out.println(printResult(n, b,c));
+       // System.out.println(printResult(n, b,c));
     }
 
-    private static String printResult(int n, int [] diet, int[][] fruits) {
+    private static void printResult(int n, int [] diet, int[][] fruits) {
     	
     	int[][] a0=new int[n][diet[0]];
     	int[][] a1=new int[n][diet[1]];
